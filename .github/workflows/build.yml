@@ -38,6 +38,31 @@ jobs:
       - name: Sync
         run: npx cap sync android
 
+      - name: Copy app icons
+        run: |
+          IC=android/app/src/main/res
+          mkdir -p $IC/mipmap-mdpi $IC/mipmap-hdpi $IC/mipmap-xhdpi $IC/mipmap-xxhdpi $IC/mipmap-xxxhdpi
+
+          # mdpi 48x48
+          convert icon-192.png -resize 48x48 $IC/mipmap-mdpi/ic_launcher.png
+          convert icon-192.png -resize 48x48 $IC/mipmap-mdpi/ic_launcher_round.png
+
+          # hdpi 72x72
+          convert icon-192.png -resize 72x72 $IC/mipmap-hdpi/ic_launcher.png
+          convert icon-192.png -resize 72x72 $IC/mipmap-hdpi/ic_launcher_round.png
+
+          # xhdpi 96x96
+          convert icon-192.png -resize 96x96 $IC/mipmap-xhdpi/ic_launcher.png
+          convert icon-192.png -resize 96x96 $IC/mipmap-xhdpi/ic_launcher_round.png
+
+          # xxhdpi 144x144
+          convert icon-192.png -resize 144x144 $IC/mipmap-xxhdpi/ic_launcher.png
+          convert icon-192.png -resize 144x144 $IC/mipmap-xxhdpi/ic_launcher_round.png
+
+          # xxxhdpi 192x192
+          convert icon-192.png -resize 192x192 $IC/mipmap-xxxhdpi/ic_launcher.png
+          convert icon-192.png -resize 192x192 $IC/mipmap-xxxhdpi/ic_launcher_round.png
+
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
