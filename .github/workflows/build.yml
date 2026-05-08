@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +26,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Install ImageMagick
+        run: sudo apt-get install -y imagemagick
 
       - name: Install dependencies
         run: npm install
