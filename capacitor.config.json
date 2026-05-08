@@ -1,0 +1,12 @@
+{
+  "appId": "com.rehlatahwol.app",
+  "appName": "رحلة التحول",
+  "webDir": "www",
+  "server": {
+    "url": "https://rehla-tahwol.netlify.app",
+    "cleartext": false
+  },
+  "android": {
+    "backgroundColor": "#f4f7fb"
+  }
+}

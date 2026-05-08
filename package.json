@@ -1,0 +1,13 @@
+{
+  "name": "rehla-tahwol",
+  "version": "1.0.0",
+  "description": "رحلة التحول الكبير",
+  "scripts": {
+    "build": "echo done"
+  },
+  "dependencies": {
+    "@capacitor/android": "5.7.4",
+    "@capacitor/cli": "5.7.4",
+    "@capacitor/core": "5.7.4"
+  }
+}
